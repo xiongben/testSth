@@ -63,39 +63,22 @@ class QimuActivity : AppCompatActivity() {
                 if (request != null) {
                     if (request.url.toString().contains("liveness.skytouch.cc")) {
                         val fileUrl = request.url.toString()
-                        for(str in sourceStrArr) {
+                        for(str in sourceStrArr2) {
                             if (fileUrl.indexOf(str,-1) > 0) {
                                 var sourceFile: InputStream? = null
                                 try {
                                     sourceFile = applicationContext.assets.open("web/"+str)
-//                                    var extension: String = MimeTypeMap.getFileExtensionFromUrl(str)
-//                                    var mimeType: String? = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
                                     Log.d("QimuActivity", sourceFile.toString())
                                 } catch (e: IOException) {
                                     Log.e("QimuActivity", e.toString())
                                     e.printStackTrace()
                                 }
-//                                var webResourceResponse: WebResourceResponse = WebResourceResponse("application/json", "utf-8", sourceFile)
-//                                return webResourceResponse
+                                var webResourceResponse: WebResourceResponse = WebResourceResponse("application/octet-stream", "utf-8", sourceFile)
+                                return webResourceResponse
 
                             }
                         }
-//                        for(str2 in sourceStrArr2) {
-//                            if (fileUrl.indexOf(str2,-1) > 0) {
-//                                var sourceFile: InputStream? = null
-//                                try {
-//                                    sourceFile = applicationContext.assets.open(str2)
-////                                    var extension: String = MimeTypeMap.getFileExtensionFromUrl(str)
-////                                    var mimeType: String? = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
-//                                    Log.d("QimuActivity", sourceFile.toString())
-//                                } catch (e: IOException) {
-//                                    Log.e("QimuActivity", e.toString())
-//                                    e.printStackTrace()
-//                                }
-//                                return WebResourceResponse("application/octet-stream", "utf-8", sourceFile)
-//                            }
-//                        }
-                        Log.d("QimuActivity", request.url.toString())
+//                        Log.d("QimuActivity", request.url.toString())
                     }
                 }
                 return super.shouldInterceptRequest(view, request)
