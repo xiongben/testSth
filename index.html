@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: aliceblue;
+        }
+        .fluid-xb-iframe-box {
+            width: 400px;
+            height: 450px;
+            border: none;
+        }
+        .fluid-xb-bg {
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.643975);
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        .fluid-xb-box {
+            width: 400px;
+            height: 450px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+ <div class="fluid-xb-bg">
+     <div class="fluid-xb-box">
+         <iframe src="http://localhost:8082/#/home?order_number=627648719168212992&company_id=111" class="fluid-xb-iframe-box"></iframe>
+     </div>
+ </div>
+ <script type="text/javascript" src="./fluid.js"></script>
+<script>
+    let fluidObject = new fluid()
+    fluidObject.init()
+    setTimeout(function () {
+        fluidObject.openDialog()
+    }, 1000)
+
+</script>
+</body>
+</html>
