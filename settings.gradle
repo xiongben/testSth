@@ -1,3 +1,0 @@
-include ':qimulibrary'
-include ':app'
-rootProject.name = "Qimu Demo"
