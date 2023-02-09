@@ -7,37 +7,28 @@
         body {
             background: aliceblue;
         }
-        .fluid-xb-iframe-box {
-            width: 400px;
-            height: 450px;
-            border: none;
+        .fluid-url {
+            width: 250px;
+            height: 30px;
+            line-height: 30px;
         }
-        .fluid-xb-bg {
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.643975);
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-        }
-        .fluid-xb-box {
-            width: 400px;
-            /*height: 450px;*/
-            margin: 100px auto;
-            background: #fff;
-        }
-        .fluid-xb-close {
-            width: 17px;
-            height: 17px;
-            float: right;
-            margin: 8px;
+        .submitBtn {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: aquamarine;
+            border-radius: 8px;
+            color: white;
+            margin-top: 50px;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="fluid.css">
 </head>
 <body>
+<h1>Merchant Test Demo</h1>
+<span>fluid url:</span><input class="fluid-url" id="fluidUrlId"/>
+<div class="submitBtn" id="btn">open fluid</div>
 <!-- <div class="fluid-xb-bg">-->
 <!--     <div class="fluid-xb-box">-->
 <!--         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAlCAYAAAAqXEs9AAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADYSURBVHgB1ZXrCcMwEINFJ9H+S3iUjpImkEIKbey7k1LnwPiH9fjAeQCfw3W1fXcPe13bwXNdy74TXpjTrqNggReKva5vAhcUR7raD4Eaiicw79VGhVUoRjvCBidM2eiAkQU4shRBigxZYMUrh8p4bFARbWk4WHQJTATqMpgqlAUmC2WFiUKlYB64+RATXRkx0UNNTPTaExN9GImJfh1MFGQ8NhiFVw6jzNAGKbLKAcrMtNEBFTa4oRq8MBGo1hOqYEagutemhgl3HYUumHDXdtDghflHV35e5EwCm+oUFI0AAAAASUVORK5CYII=" class="fluid-xb-close">-->
@@ -49,9 +40,13 @@
 <script>
     let fluidObject = new fluid()
     fluidObject.init()
-    setTimeout(function () {
-        fluidObject.openDialog()
-    }, 1000)
+
+    var btn = document.getElementById("btn");
+
+    btn.addEventListener('click',function(){
+        var fluidUrl = document.getElementById("fluidUrlId").value
+        fluidObject.openDialog(fluidUrl)
+    },false)
 
 </script>
 </body>

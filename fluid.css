@@ -1,0 +1,28 @@
+.fluid-xb-iframe-box {
+    width: 400px;
+    height: 450px;
+    border: none;
+}
+.fluid-xb-bg {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.643975);
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.fluid-xb-box {
+    width: 400px;
+    /*height: 450px;*/
+    margin: 100px auto;
+    background: #fff;
+}
+.fluid-xb-close {
+    width: 17px;
+    height: 17px;
+    float: right;
+    margin: 8px;
+}
