@@ -1,0 +1,14 @@
+{
+  "name": "fluid-xb-tools",
+  "version": "1.0.3",
+  "main": "fluid.js",
+  "exports": {
+    ".": "fluid.js",
+    "./fluid.css": "fluid.css"
+  },
+  "description": "提供了fluid相关的功能",
+  "keywords": [
+    "fluid"
+  ],
+  "license": "ISC"
+}
