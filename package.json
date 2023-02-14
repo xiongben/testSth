@@ -1,6 +1,6 @@
 {
   "name": "fluid-xb-tools",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "fluid.js",
   "exports": {
     ".": "fluid.js",
