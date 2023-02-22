@@ -1,6 +1,7 @@
+
 .fluid-xb-iframe-box {
     width: 400px;
-    height: 450px;
+    height: 530px;
     border: none;
 }
 .fluid-xb-bg {
@@ -16,13 +17,15 @@
 }
 .fluid-xb-box {
     width: 400px;
-    /*height: 450px;*/
+    height: 530px;
     margin: 100px auto;
-    background: #fff;
+    border-radius: 10px;
+    background: #F8F8F8;
+    overflow: hidden;
 }
 .fluid-xb-close {
-    width: 17px;
-    height: 17px;
+    width: 12px;
+    height: 12px;
     float: right;
     margin: 8px;
 }

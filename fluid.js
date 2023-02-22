@@ -8,9 +8,20 @@ fluid.prototype = {
         var oHead = document.getElementsByTagName('HEAD').item(0);
         var oScript= document.createElement("script");
         oScript.type = "text/javascript";
-        oScript.src="https://payment-test.gofluid.io/web/jquery.js";
+        oScript.src="https://code.jquery.com/jquery-3.6.3.min.js";
         oHead.appendChild( oScript);
         console.log("init fluid");
+        window.addEventListener('message', function (e) {
+            try {
+                let data = JSON.parse(e.data)
+                if (data.from === 'auth' && data.event === 'close') {
+                    const $ = window.jQuery;
+                    $(".fluid-xb-bg").hide()
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        })
     },
     openDialog: function (url) {
         if (isMobile()) {
@@ -20,8 +31,7 @@ fluid.prototype = {
             var dialogDom = $(
                 '<div class="fluid-xb-bg">'+
                 '<div class="fluid-xb-box">'+
-                '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAlCAYAAAAqXEs9AAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADYSURBVHgB1ZXrCcMwEINFJ9H+S3iUjpImkEIKbey7k1LnwPiH9fjAeQCfw3W1fXcPe13bwXNdy74TXpjTrqNggReKva5vAhcUR7raD4Eaiicw79VGhVUoRjvCBidM2eiAkQU4shRBigxZYMUrh8p4bFARbWk4WHQJTATqMpgqlAUmC2WFiUKlYB64+RATXRkx0UNNTPTaExN9GImJfh1MFGQ8NhiFVw6jzNAGKbLKAcrMtNEBFTa4oRq8MBGo1hOqYEagutemhgl3HYUumHDXdtDghflHV35e5EwCm+oUFI0AAAAASUVORK5CYII=" class="fluid-xb-close">'+
-                '<iframe src="' + url + '" class="fluid-xb-iframe-box"></iframe>'+
+                '<iframe src="' + url + '" class="fluid-xb-iframe-box" marginwidth="0" marginheight="0"></iframe>'+
                 '</div>'+
                 '</div>'
             )

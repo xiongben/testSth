@@ -25,7 +25,7 @@
     </style>
     <link rel="stylesheet" type="text/css" href="fluid.css">
 </head>
-<body>
+<body style="margin:0;padding:0;overflow:hidden" scroll="no">
 <h1>Merchant Test Demo</h1>
 <span>fluid url:</span><input class="fluid-url" id="fluidUrlId"/>
 <div class="submitBtn" id="btn">open fluid</div>
@@ -45,6 +45,7 @@
 
     btn.addEventListener('click',function(){
         var fluidUrl = document.getElementById("fluidUrlId").value
+        // var fluidUrl = "http://localhost:8080/#/home?order_number=634702091364864000&company_id=111"
         fluidObject.openDialog(fluidUrl)
     },false)
 
