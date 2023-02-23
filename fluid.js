@@ -23,7 +23,7 @@ fluid.prototype = {
             }
         })
     },
-    openDialog: function (url) {
+    loadFluidPayment: function (url) {
         if (isMobile()) {
             window.open(url)
         } else {

@@ -1,6 +1,6 @@
 {
-  "name": "fluid-xb-tools",
-  "version": "1.0.12",
+  "name": "fluid-payment-js",
+  "version": "1.0.2",
   "main": "fluid.js",
   "exports": {
     ".": "fluid.js",

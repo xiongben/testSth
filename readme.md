@@ -1,12 +1,12 @@
 ## Install
 ```shell
-npm install fluid-xb-tools --save-dev
+npm install fluid-payment-js --save-dev
 ```
 
 ## Quick Start
 ``` javascript
-import {fluid} from 'fluid-xb-tools'
-import 'fluid-xb-tools/fluid.css'
+import {fluid} from 'fluid-payment-js'
+import 'fluid-payment-js/fluid.css'
 
 // init
 export default {
@@ -22,7 +22,7 @@ export default {
   methods: {
     openFluid: function () {
       // open fluid
-      this.fluidObject.openDialog(iframeUrl)
+      this.fluidObject.loadFluidPayment(iframeUrl)
     }
   }
 }
